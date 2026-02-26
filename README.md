@@ -102,4 +102,4 @@ For issues, questions, or contributions, please refer to the project's issue tra
 
 ---
 
-*Last Updated: February 22, 2026*
+*Last Updated: February 22, 2026.*
