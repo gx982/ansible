@@ -1,0 +1,21 @@
+---
+- name: Configure database servers
+  hosts: dbservers
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Ensure PostgreSQL is installed
+      ansible.builtin.package:
+        name: postgresql
+        state: present
+
+    - name: Verify PostgreSQL installation
+      ansible.builtin.command: psql --version
+      register: pg_version
+      changed_when: false
+      ignore_errors: true
+
+    - name: Display PostgreSQL version
+      ansible.builtin.debug:
+        msg: "PostgreSQL version installed: {{ pg_version.stdout }}"

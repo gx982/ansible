@@ -18,4 +18,3 @@
       ansible.builtin.debug:
         msg: "Nano version installed: {{ nano_version.stdout }}"
       when: ansible_distribution == "AlmaLinux"
-      

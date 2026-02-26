@@ -1,0 +1,20 @@
+---
+- name: Install nginx on web hosts
+  hosts: webservers
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Ensure nginx is installed
+      ansible.builtin.package:
+        name: nginx
+        state: present
+
+    - name: Verify nginx installation
+      ansible.builtin.command: nginx -v
+      register: nginx_version
+      changed_when: false
+      ignore_errors: true
+
+    - name: Display nginx version
+      ansible.builtin.debug:
+        msg: "Nginx version installed: {{ nginx_version.stderr | default(nginx_version.stdout) }}"
