@@ -1,0 +1,15 @@
+---
+collections:
+  # Core OS / Linux management
+  - name: ansible.posix
+    version: ">=1.5.0,<2.0.0"
+
+  - name: community.general
+    version: ">=8.0.0,<9.0.0"
+  
+  # Utilities & helpers
+  - name: ansible.utils
+    version: ">=2.10.0,<3.0.0"
+
+  - name: community.crypto
+    version: ">=2.20.0,<3.0.0"

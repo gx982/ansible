@@ -5,16 +5,17 @@
   gather_facts: true
   tasks:
     - name: Ensure nano is installed
-      package:
+      ansible.builtin.package:
         name: nano
         state: present
       when: ansible_distribution == "AlmaLinux"
     - name: Verify nano installation
-      command: nano --version
+      ansible.builtin.command: nano --version
       register: nano_version
       changed_when: false
-      when: ansible_distribution == "AlmaLinux"      
-    - name: Display nano version  
-      debug:
+      when: ansible_distribution == "AlmaLinux"
+    - name: Display nano version
+      ansible.builtin.debug:
         msg: "Nano version installed: {{ nano_version.stdout }}"
       when: ansible_distribution == "AlmaLinux"
+      
