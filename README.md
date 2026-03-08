@@ -1,3 +1,17 @@
+# Notes
+whoami = g
+ssh-keyscan 192.168.50.166 >> ~/.ssh/known_hosts
+cd /home/g/github/gx982/ansible
+ansible -i inventories/prd/hosts.yml all -m ansible.builtin.debug -a "var=ansible_host"
+ansible-inventory -i  inventories/prd/hosts.yml --graph
+ansible -i  inventories/prd/hosts.yml site_x  -m ping --ask-pass
+
+
+
+
+
+
+
 # Ansible Configuration Management
 
 ## Project Overview

@@ -1,0 +1,6 @@
+common_apache:
+  version: 2.4
+  document_root: /var/www/html
+  port: 80
+common_postgresql:
+  version: 17
